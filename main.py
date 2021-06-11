@@ -1,3 +1,4 @@
+import time
 from cell import Cell, pygame
 
 def neighbors(grid, x, y):
@@ -32,7 +33,6 @@ def gol(grid):
 if __name__ == '__main__':
   # Call cell that inherits field
   cl = Cell(800, 800, 20, 20, 5)
-  cl.init_pygame()    
 
   done = True
   PLAY = False
@@ -42,6 +42,7 @@ if __name__ == '__main__':
       done = cl.capture_close(event)
       cl.spawn_cell_mouse(event)
       PLAY = cl.play(event, PLAY)
+      cl.reset_grid(event)
     
     cl.fill_bg()
     cl.draw_grid()
@@ -49,6 +50,5 @@ if __name__ == '__main__':
 
     if PLAY:
       cl.grid = gol(cl.grid)
-
 
   cl.quit()

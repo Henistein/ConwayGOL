@@ -2,6 +2,8 @@ import pygame
 
 class Field:
   def __init__(self, W, H):
+    pygame.init()
+    pygame.display.set_caption('Game of Life')
     # Define some colors
     self.WHITE = (255, 255, 255)
     self.GREEN = (0, 255, 0)
@@ -11,9 +13,6 @@ class Field:
     self.H = H
     self.screen = pygame.display.set_mode([W, H])   
     self.clock = pygame.time.Clock()
-
-  def init_pygame(self):
-    pygame.init()
 
   def capture_close(self, event):
     if event.type == pygame.QUIT:
@@ -33,8 +32,8 @@ class Field:
     self.screen.fill(self.GREY)
 
   def fps_display_flip(self):
-    # Limit to 60 frames per second
-    self.clock.tick(60)
+    # Limit to 30 frames per second
+    self.clock.tick(30)
     pygame.display.flip()
   
   def quit(self):

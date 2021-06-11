@@ -35,3 +35,8 @@ class Cell(Field):
                                         (self.MARGIN + self.HEIGHT) * row + self.MARGIN,         \
                                         self.WIDTH,                                              \
                                         self.HEIGHT])
+
+  def reset_grid(self, event):
+    if event.type == pygame.KEYDOWN:
+      if event.key == pygame.K_c:
+        self.grid = [[0 for i in range(self.GS)] for j in range(self.GS)]
