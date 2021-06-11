@@ -35,15 +35,3 @@ class Cell(Field):
                                         (self.MARGIN + self.HEIGHT) * row + self.MARGIN,         \
                                         self.WIDTH,                                              \
                                         self.HEIGHT])
-
-  '''
-  def run(self):
-    done = False
-    while not done:
-      for event in pygame.event.get():
-        self.capture_close()
-        #self.spawn_cell_mouse()
-        self.fill_bg()
-        self.draw_grid()
-        self.fps_display_flip()
-  '''

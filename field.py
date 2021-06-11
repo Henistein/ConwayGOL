@@ -20,6 +20,14 @@ class Field:
       return False
     else:
       return True
+
+  def play(self, event, PLAY):
+    if event.type == pygame.KEYDOWN:
+      if event.key == pygame.K_r:
+        PLAY = True
+      if event.key == pygame.K_s:
+        PLAY = False
+    return PLAY
       
   def fill_bg(self):
     self.screen.fill(self.GREY)
